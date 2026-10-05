@@ -16,7 +16,14 @@
 # compose's own network only, not a bare `docker run`.
 services:
   app:
-    build: .
+    # The manager itself needs a cluster (a kubeconfig or an in-cluster service account), so
+    # off-cluster the job is the reconciler's test suite against controller-runtime's fake
+    # client, run in the Dockerfile's build stage. The image CI ships (the default target)
+    # is unchanged: the distroless manager.
+    build:
+      context: .
+      target: build
+    command: ["go", "test", "./..."]
     environment:
       # the app's public hostname / origin
       FLEET_APP_HOST:
