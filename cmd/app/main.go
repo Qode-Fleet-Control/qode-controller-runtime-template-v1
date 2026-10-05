@@ -11,7 +11,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Qode-Platform/qode-controller-runtime-template-v1/controller"
+	"github.com/Qode-Fleet-Control/qode-controller-runtime-template-v1/controller"
 	corev1 "k8s.io/api/core/v1"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/healthz"

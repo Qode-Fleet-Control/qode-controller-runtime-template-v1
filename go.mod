@@ -1,4 +1,4 @@
-module github.com/Qode-Platform/qode-controller-runtime-template-v1
+module github.com/Qode-Fleet-Control/qode-controller-runtime-template-v1
 
 go 1.26.0
 
